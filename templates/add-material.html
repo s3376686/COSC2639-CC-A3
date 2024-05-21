@@ -1,0 +1,10 @@
+{% extends "base.html" %} {% load static %} {% load crispy_forms_tags %} 
+{%block content %}
+<div class="container mt-5">
+  <h1>Add Study Material</h1>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %} {{ form|crispy }}
+    <button type="submit" class="btn btn-success mt-3">Upload Material</button>
+  </form>
+</div>
+{% endblock %}

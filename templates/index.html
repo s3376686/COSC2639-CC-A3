@@ -1,0 +1,23 @@
+{% load static %}<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentat - Home</title>
+    <link rel="stylesheet" href="https://bootswatch.com/5/flatly/bootstrap.min.css">
+</head>
+<body>
+    <div class="container text-center mt-5">
+        <div class="my-4">
+            <!-- Placeholder for the logo -->
+            <img src="{% static 'mentat-logo.jpg' %}" alt="Mentat Logo" class="mb-4" style="max-width: 150px;">
+        </div>
+        <h1>Welcome to Mentat</h1>
+        <p>Your gateway to shared educational resources.</p>
+        <div class="actions mt-4">
+            <a href="{% url 'login' %}" class="btn btn-primary">Log In</a>
+            <a href="{% url 'register' %}" class="btn btn-secondary">Register</a>
+        </div>
+    </div>
+</body>
+</html>

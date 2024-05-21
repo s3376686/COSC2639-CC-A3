@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="container mt-5">
+        <h2>Welcome to Mentat, {{ user.username }}!</h2>
+        <p>Use this platform to manage all your study documents for your courses.</p>
+        <div class="mt-3">
+            <h3>Your Courses</h3>
+            <ul>
+                <li>Course 1 - Next deadline: June 10th, 2024</li>
+                <li>Course 2 - Next deadline: July 15th, 2024</li>
+                <li>Course 3 - Next deadline: August 5th, 2024</li>
+            </ul>
+        </div>
+
+        <div class="mt-3">
+            <h3>Upcoming Deadlines</h3>
+            <ul>
+                <li>Assignment 1 for Course 1 - Due: June 10th, 2024</li>
+                <li>Project for Course 2 - Due: July 15th, 2024</li>
+                <li>Exam prep for Course 3 - Due: August 5th, 2024</li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}

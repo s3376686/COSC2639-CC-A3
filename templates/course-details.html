@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% load static %} 
+{%block content %}
+
+<div class="container mt-5">
+  <h1>{{ course.name }} - Study Materials</h1>
+  <!-- Button to upload new study material -->
+  {% if course and course.id %}
+  <div class="mb-4">
+    <a href="{% url 'add-material' course.id %}" class="btn btn-success"
+      >Add New Material</a
+    >
+  </div>
+  {% else %}
+  <div class="mb-4">
+    <p>Invalid course data.</p>
+  </div>
+  {% endif %}
+
+  <table class="table table-hover">
+    <thead class="table-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Title</th>
+        <th scope="col">Description</th>
+        <th scope="col">Tags</th>
+        <th scope="col">Uploaded On</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for material in course.study_materials.all %}
+      <tr
+        onclick="location.href='{% url 'material-detail' material.id %}';"
+        style="cursor: pointer"
+      >
+        <th scope="row">{{ forloop.counter }}</th>
+        <td>{{ material.title }}</td>
+        <td>{{ material.description }}</td>
+        <td>
+          {% for tag in material.tags.all %}
+          <span class="badge bg-secondary">{{ tag.name }}</span>
+          {% endfor %}
+        </td>
+        <td>{{ material.upload_date|date:"Y-m-d" }}</td>
+      </tr>
+      {% empty %}
+      <tr>
+        <td colspan="5" class="text-center">No study materials available</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

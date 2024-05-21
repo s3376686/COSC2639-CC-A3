@@ -1,0 +1,13 @@
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
+.env
+venv/
+db.sqlite3
+mentat/__pycache__/
+material/__pycache__/
+login/__pycache__/
+user_settings/__pycache__/
+courses/__pycache__/
